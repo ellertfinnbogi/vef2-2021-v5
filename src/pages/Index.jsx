@@ -1,4 +1,4 @@
-
+import { NewsLink} from '../components/NewsLink';
 import PropTypes from 'prop-types';
 
 
@@ -7,33 +7,95 @@ Index.propTypes = {
   news: PropTypes.arrayOf(PropTypes.object),
 }
 
-function Test({title = '', link = ''}) {
-  return (
-    <li>
-      <a href={link}>{title}</a>
-    </li>
-  )
-}
-
-
-export function Index({ title, news }) {
-  // TODO útfæra yfirlitssíðu
+export function Index({ allNews, sportNews, domesticNews,foreignNews,cultureNews }) { 
 
   return  (
   <section>
-    <h1>{title}</h1>
-    {news.length>0 && news.map((item,i) => {
+      <div>
+      <h1>Allar fréttir</h1>
+    {allNews.length>0 && allNews.map((item,i) => {
       const {
         title,link
       } = item;
     return (
-      <Test
+      <NewsLink
       key={i}
       title={title}
       link={link}
       />
      )
+     
     })}
+    <h3>Allar fréttir</h3>
+    </div>
+    <div>
+      <h1>Íþróttafréttir</h1>
+    {sportNews.length > 0 && sportNews.map((item, i) => {
+      const {
+        title,link
+      } = item;
+      return (
+        <NewsLink
+        key={i}
+        title={title}
+        link={link}
+        />
+       
+      )
+    })}
+    <h3>Allar fréttir</h3>
+    </div>
+    <div>
+      <h1>Menningafréttir</h1>
+    {cultureNews.length > 0 && cultureNews.map((item, i) => {
+      const {
+        title,link
+      } = item;
+      return (
+        <NewsLink
+        key={i}
+        title={title}
+        link={link}
+        />
+       
+      )
+    })}
+    <h3>Allar fréttir</h3>
+    </div>
+    <div>
+      <h1>Erlendar fréttir</h1>
+    {foreignNews.length > 0 && foreignNews.map((item, i) => {
+      const {
+        title,link
+      } = item;
+      return (
+        <NewsLink
+        key={i}
+        title={title}
+        link={link}
+        />
+       
+      )
+    })}
+    <h3>Allar fréttir</h3>
+    </div>
+    <div>
+      <h1>Innlendar fréttir</h1>
+    {domesticNews.length > 0 && domesticNews.map((item, i) => {
+      const {
+        title,link
+      } = item;
+      return (
+        <NewsLink
+        key={i}
+        title={title}
+        link={link}
+        />
+       
+      )
+    })}
+    <h3>Allar fréttir</h3>
+    </div>
      </section>
      
     );

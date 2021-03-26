@@ -24,3 +24,7 @@ body {
   display: inline-block;
   background-color: bisque;
 }
+
+li {
+  list-style-type: none;
+}
