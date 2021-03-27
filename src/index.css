@@ -17,14 +17,20 @@ body {
 }
 
 .news-list {
-  height: 250;
-  margin-right: 10px;
-  width: 200px;
-  float: left;
+  height: 250px;
+  margin-right: 1.5em;
+  margin-bottom: 1.5em;
+  padding-left: 2px;
+  width: 30%;
   display: inline-block;
   background-color: bisque;
+  border: 1px solid black;
 }
 
 li {
   list-style-type: none;
+}
+
+a {
+  font-size: 12px;
 }

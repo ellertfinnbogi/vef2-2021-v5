@@ -10,9 +10,9 @@ Index.propTypes = {
 export function Index({ allNews, sportNews, domesticNews,foreignNews,cultureNews }) { 
 
   return  (
-  <section>
-      <div>
-      <h1>Allar fréttir</h1>
+  <div className="news-list-container">
+      <div className="news-list">
+      <h2>Allar fréttir</h2>
     {allNews.length>0 && allNews.map((item,i) => {
       const {
         title,link
@@ -26,10 +26,10 @@ export function Index({ allNews, sportNews, domesticNews,foreignNews,cultureNews
      )
      
     })}
-    <h3>Allar fréttir</h3>
+    <h3><a href="/allar">Allar fréttir</a></h3>
     </div>
-    <div>
-      <h1>Íþróttafréttir</h1>
+    <div className="news-list">
+      <h2>Íþróttafréttir</h2>
     {sportNews.length > 0 && sportNews.map((item, i) => {
       const {
         title,link
@@ -43,10 +43,10 @@ export function Index({ allNews, sportNews, domesticNews,foreignNews,cultureNews
        
       )
     })}
-    <h3>Allar fréttir</h3>
+    <h3><a href="/ithrottir">Allar fréttir</a></h3>
     </div>
-    <div>
-      <h1>Menningafréttir</h1>
+    <div className="news-list">
+      <h2>Menningafréttir</h2>
     {cultureNews.length > 0 && cultureNews.map((item, i) => {
       const {
         title,link
@@ -60,10 +60,10 @@ export function Index({ allNews, sportNews, domesticNews,foreignNews,cultureNews
        
       )
     })}
-    <h3>Allar fréttir</h3>
+    <h3><a href="/menning">Allar fréttir</a></h3>
     </div>
-    <div>
-      <h1>Erlendar fréttir</h1>
+    <div className="news-list">
+      <h2>Erlendar fréttir</h2>
     {foreignNews.length > 0 && foreignNews.map((item, i) => {
       const {
         title,link
@@ -77,10 +77,10 @@ export function Index({ allNews, sportNews, domesticNews,foreignNews,cultureNews
        
       )
     })}
-    <h3>Allar fréttir</h3>
+    <h3><a href="/erlent">Allar fréttir</a></h3>
     </div>
-    <div>
-      <h1>Innlendar fréttir</h1>
+    <div className="news-list">
+      <h2>Innlendar fréttir</h2>
     {domesticNews.length > 0 && domesticNews.map((item, i) => {
       const {
         title,link
@@ -94,9 +94,9 @@ export function Index({ allNews, sportNews, domesticNews,foreignNews,cultureNews
        
       )
     })}
-    <h3>Allar fréttir</h3>
+    <h3><a href="/innlent">Allar fréttir</a></h3>
     </div>
-     </section>
+     </div>
      
     );
     

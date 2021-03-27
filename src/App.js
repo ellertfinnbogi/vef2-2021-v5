@@ -16,6 +16,7 @@ export default function App() {
       <Router>
         <Switch>
           <Route exact path={basePath} component={NewsList} />
+          <Route exact path="/:type" component={NewsPage} />
         </Switch>
       </Router>
 
