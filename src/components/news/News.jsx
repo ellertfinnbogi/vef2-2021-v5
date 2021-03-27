@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Index } from '../../pages/Index';
+import {useParams} from 'react-router-dom';
+import { NewsPage }  from '../../pages/News';
 const apiUrl = process.env.REACT_APP_API_URL;
 const apisurl = 'https://vef2-2021-ruv-rss-json-proxy.herokuapp.com/allar';
 
-export default function News({  }) {
+export function News() {
   const [loading,setLoading] = useState(false);
   const [data, setData] = useState(false);
   const [error, setError] = useState(null);
+
+  let { type } = useParams();
+
 
   useEffect(() => {
     async function fetchData() {
@@ -14,7 +18,7 @@ export default function News({  }) {
       setError(null);
 
       let json;
-      const url = 'https://vef2-2021-ruv-rss-json-proxy.herokuapp.com/allar';
+      const url = 'https://vef2-2021-ruv-rss-json-proxy.herokuapp.com/'+type;
   
       try {
         const result = await fetch(url);
@@ -50,7 +54,7 @@ export default function News({  }) {
 
   //const {title} = "sdfsdf";
   return (
-    <Index
+    <NewsPage
       title="sdfsdafd"
       news={news}
     />

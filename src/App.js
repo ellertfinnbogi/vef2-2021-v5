@@ -3,7 +3,7 @@
 import { Layout } from './components/layout/Layout';
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
 import { Index } from './pages/Index';
-import { NewsPage } from './pages/News';
+import { News } from './components/news/News';
 import { NotFound } from './pages/NotFound';
 import { NewsList } from './components/news-list/NewsList';
 
@@ -16,7 +16,7 @@ export default function App() {
       <Router>
         <Switch>
           <Route exact path={basePath} component={NewsList} />
-          <Route exact path="/:type" component={NewsPage} />
+          <Route exact path="/:type" component={News} />
         </Switch>
       </Router>
 
