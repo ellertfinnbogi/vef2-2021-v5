@@ -27,8 +27,19 @@ body {
   border: 1px solid black;
 }
 
+.news-box {
+  background-color: bisque;
+  border: 1px solid black;
+  width: 80%;
+}
+
 li {
   list-style-type: none;
+  margin-left: 0.5em;
+}
+
+.title {
+  margin-left: 0.5em;
 }
 
 a {

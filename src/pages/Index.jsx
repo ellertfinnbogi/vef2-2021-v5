@@ -8,8 +8,9 @@ Index.propTypes = {
 }
 
 export function Index({ allNews, sportNews, domesticNews,foreignNews,cultureNews }) { 
-
+  
   return  (
+
   <div className="news-list-container">
       <div className="news-list">
       <h2>Allar fréttir</h2>

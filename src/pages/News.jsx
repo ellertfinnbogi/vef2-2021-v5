@@ -3,8 +3,9 @@ import { NewsLink} from '../components/NewsLink';
 export function NewsPage({title, news}) {
 
     return  (
-        <section>
-          <h1>{title}</h1>
+        <div className="news-list-container">
+          <div className="news-box">
+          <h1 className="title">{title}</h1>
           {news.length>0 && news.map((item,i) => {
             const {
               title,link
@@ -17,7 +18,8 @@ export function NewsPage({title, news}) {
             />
            )
           })}
-           </section>
+          </div>
+           </div>
            
           );
 }

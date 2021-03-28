@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
 import { NewsPage }  from '../../pages/News';
+import { NotFound } from '../../pages/NotFound';
 const apiUrl = process.env.REACT_APP_API_URL;
 const apisurl = 'https://vef2-2021-ruv-rss-json-proxy.herokuapp.com/allar';
 
@@ -8,6 +9,7 @@ export function News() {
   const [loading,setLoading] = useState(false);
   const [data, setData] = useState(false);
   const [error, setError] = useState(null);
+  const [notFound, setNotFound] = useState(null);
 
   let { type } = useParams();
 
@@ -16,6 +18,7 @@ export function News() {
     async function fetchData() {
       setLoading(true);
       setError(null);
+      setNotFound(null);
 
       let json;
       const url = 'https://vef2-2021-ruv-rss-json-proxy.herokuapp.com/'+type;
@@ -26,9 +29,13 @@ export function News() {
         if(!result.ok) {
           throw new Error('result not ok');
         }
+        if(result.status === 404) {
+          setNotFound("not found");
+        }
   
         json = await result.json();
       } catch(e) {
+        console.log('error: ' + e);
         setError('Gat ekki sótt gögn');
         return;
       } finally {
@@ -51,11 +58,12 @@ export function News() {
     );
   }
   let news = data.items || [];
+  let title = data.title;
 
-  //const {title} = "sdfsdf";
+  console.log(data);
   return (
     <NewsPage
-      title="sdfsdafd"
+      title={title}
       news={news}
     />
   );
