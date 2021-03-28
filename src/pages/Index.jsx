@@ -100,7 +100,6 @@ export function Index({ allNews, sportNews, domesticNews,foreignNews,cultureNews
      </div>
      
     );
-    
 }
 
 

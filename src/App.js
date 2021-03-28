@@ -1,11 +1,8 @@
-// TODO sækja og setja upp react router
-
-import { Layout } from './components/layout/Layout';
-import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
-import { Index } from './pages/Index';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { News } from './components/news/News';
 import { NotFound } from './pages/NotFound';
 import { NewsList } from './components/news-list/NewsList';
+import dotenv from 'dotenv';
 
 const basePath = '/'
 
